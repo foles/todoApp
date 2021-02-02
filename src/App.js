@@ -48,19 +48,26 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1> Lista de Tareas </h1>
-      </header>
-      <Form
-        todos={todos}
-        setTodos={setTodos}
-        inputText={inputText}
-        setInputText={setInputText}
-        setStatus={setStatus}
-        filterTodos={filterTodos}
-      />
-      <TodoList todos={todos} setTodos={setTodos} filterTodos={filterTodos} />
+    <div className="Todo">
+      <div className="banner">
+
+      </div>
+      <div className="App">
+        <header className="App__header">
+          <h1> T O D O </h1>
+          <span className="App__header__icon"></span>
+        </header>
+        <Form
+          todos={todos}
+          setTodos={setTodos}
+          inputText={inputText}
+          setInputText={setInputText}
+          setStatus={setStatus}
+          filterTodos={filterTodos}
+        />
+        <TodoList todos={todos} setTodos={setTodos} filterTodos={filterTodos} />
+      </div>
+
     </div>
   );
 }

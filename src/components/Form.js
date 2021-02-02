@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Form.css'
 const Form = ({ todos, setTodos, inputText, setInputText, setStatus }) => {
 
     const inputTextHandler = (e) => {
@@ -19,18 +19,26 @@ const Form = ({ todos, setTodos, inputText, setInputText, setStatus }) => {
     }
 
     return (
-        <form>
-            <input value={inputText} onChange={inputTextHandler} type="text" />
-            <button onClick={submitTodoHandler} type="submit"> Agregar </button>
-            <div>
+        <div className="App__form">
+
+            <div className="form__input">
+                <input value={inputText} onChange={inputTextHandler} type="text" />
+                <button onClick={submitTodoHandler} type="submit"> Add </button>
+
+            </div>
+
+            <div className="form__filter">
                 <select onChange={statusHandler} name="todos">
                     <option value="all">Todos</option>
                     <option value="completed">Hechos</option>
                     <option value="uncompleted">Pendientes</option>
-
                 </select>
             </div>
-        </form>
+
+        </div>
+
+
+
     );
 }
 

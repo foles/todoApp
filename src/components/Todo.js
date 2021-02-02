@@ -1,5 +1,6 @@
 import React from 'react';
 import './Todo.css'
+import checkIcon from '../assets/icon-check.svg'
 const Todo = ({ todos, setTodos, todo }) => {
 
     const deleteHandler = () => {
@@ -19,10 +20,13 @@ const Todo = ({ todos, setTodos, todo }) => {
         )
     }
     return (
-        <div>
-            <li className={`todo-item ${todo.isCompleted ? 'completed' : null}`}>{todo.task}</li>
-            <button onClick={completeHandler}>Completed</button>
-            <button onClick={deleteHandler}>Deleted</button>
+        <div className="App__todo">
+            <div className="todo__task">
+                <span onClick={completeHandler} className={`todo__check ${todo.isCompleted ? 'checkCompleted' : null}`}><img src={checkIcon} /></span>
+                <li className={`todo__item ${todo.isCompleted ? 'completed' : null}`}>{todo.task}</li>
+            </div>
+            <span onClick={deleteHandler} className="todo__cross"></span>
+
 
         </div>
     );
